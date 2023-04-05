@@ -26,3 +26,15 @@ services:
     container_name: parkman
     volumes:
       - .:/var/www/parkman
+  db:
+    build:
+      context: .
+      dockerfile: docker/mysql/Dockerfile
+    container_name: parkman_sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - var/lib/mysql:/var/lib/mysql
+    restart: always

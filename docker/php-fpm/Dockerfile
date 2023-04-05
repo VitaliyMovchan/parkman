@@ -4,6 +4,9 @@ FROM php:fpm-alpine
 ARG USER_ID
 ARG GROUP_ID
 
+# Install PHP extensions
+RUN docker-php-ext-install pdo_mysql
+
 # Get latest Composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 

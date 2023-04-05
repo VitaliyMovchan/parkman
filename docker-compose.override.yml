@@ -1,0 +1,4 @@
+services:
+  db:
+    volumes:
+      - /home/vitaliy/docker/parkman/mysql:/var/lib/mysql
