@@ -14,8 +14,8 @@ final class CreateGaragesGeosTable extends AbstractMigration
     {
         $this->table('garages_geos')
             ->addColumn('garage_id', 'integer')
-            ->addColumn('latitude', 'decimal')
-            ->addColumn('longitude', 'decimal')
+            ->addColumn('latitude', 'decimal', ['length' => 17, 'decimals' => 15])
+            ->addColumn('longitude', 'decimal', ['length' => 17, 'decimals' => 15])
             ->addIndex('latitude')
             ->addIndex('longitude')
             ->addForeignKey('garage_id', 'garages')

@@ -15,7 +15,9 @@ final class CreateCurrenciesTable extends AbstractMigration
     {
         $this->table('currencies')
             ->addColumn('code', 'string')
+            ->addColumn('currency', 'string')
             ->addIndex('code', Index::TYPE_UNIQUE)
+            ->addIndex('currency', Index::TYPE_UNIQUE)
             ->create();
     }
 
