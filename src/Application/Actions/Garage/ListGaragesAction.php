@@ -15,6 +15,10 @@ class ListGaragesAction extends Action
 
     protected Manager $databaseManager;
 
+    /**
+     * @param LoggerInterface $logger
+     * @param Manager $databaseManager
+     */
     public function __construct(LoggerInterface $logger, Manager $databaseManager)
     {
         parent::__construct($logger);
@@ -22,6 +26,9 @@ class ListGaragesAction extends Action
         $this->databaseManager = $databaseManager;
     }
 
+    /**
+     * @return Response
+     */
     protected function action(): Response
     {
         $administratorName = $this->request->getAttribute("administratorName", "");
