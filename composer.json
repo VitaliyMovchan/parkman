@@ -24,7 +24,7 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
-        "illuminate/database": "~5.1",
+        "illuminate/database": "^10.6.2",
         "lulco/phoenix": "^2.3",
         "monolog/monolog": "^2.9",
         "php-di/php-di": "^6.4",
@@ -37,7 +37,8 @@
         "phpstan/extension-installer": "^1.2.0",
         "phpstan/phpstan": "^1.10",
         "phpunit/phpunit": "^9.6.4",
-        "squizlabs/php_codesniffer": "^3.7"
+        "squizlabs/php_codesniffer": "^3.7",
+        "symfony/var-dumper": "^6.2"
     },
     "config": {
         "allow-plugins": {

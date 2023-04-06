@@ -14,6 +14,10 @@ final class CreateGaragesTable extends AbstractMigration
     {
         $this->table('garages')
             ->addColumn('name', 'string')
+            ->addColumn('latitude', 'decimal', ['length' => 17, 'decimals' => 15])
+            ->addColumn('longitude', 'decimal', ['length' => 17, 'decimals' => 15])
+            ->addIndex('latitude')
+            ->addIndex('longitude')
             ->create();
     }
 

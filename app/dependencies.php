@@ -28,7 +28,7 @@ return function (ContainerBuilder $containerBuilder) {
             return $logger;
         },
         // Service factory for the ORM
-        'db' => function (ContainerInterface $c) {
+        Manager::class => function (ContainerInterface $c) {
             $settings = $c->get(SettingsInterface::class);
             $dbSettings = $settings->get('db');
 
