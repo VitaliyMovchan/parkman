@@ -31,10 +31,12 @@ class ListGaragesAction extends Action
      */
     protected function action(): Response
     {
-        $administratorName = $this->request->getAttribute("administratorName", "");
-        $countryName = $this->request->getAttribute("countryName", "");
-        $latitude = $this->request->getAttribute("latitude", 0);
-        $longitude = $this->request->getAttribute("longitude", 0);
+        $parameters = $this->request->getParsedBody();
+
+        $administratorName = $parameters["administratorName"] ?? "";
+        $countryName = $parameters["countryName"] ?? "";
+        $latitude = $parameters["latitude"] ?? 0;
+        $longitude = $parameters["longitude"] ?? 0;
 
         $table = $this->databaseManager
             ->table("garages")
@@ -45,6 +47,7 @@ class ListGaragesAction extends Action
                 "currencies.code as currency",
                 "administrators_emails.value as contact_email",
                 Manager::raw("CONCAT(garages.latitude, ' ', garages.longitude) as point"),
+                "countries.name as country",
                 "administrators.id as owner_id",
                 "administrators.name as garage_owner",
             ])
