@@ -16,7 +16,7 @@ use Twig\Error\SyntaxError;
 class ViewGarageAction extends Action
 {
     /**
-     * @var mixed
+     * @var Environment
      */
     protected Environment $view;
 
