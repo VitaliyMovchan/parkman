@@ -27,8 +27,8 @@ return function (App $app) {
         $group->get('/{id}', ViewUserAction::class);
     });
 
-    $app->group('/garage', function (Group $group) {
-        $group->get('', ViewGarageAction::class);
-        $group->post('', ListGaragesAction::class);
+    $app->group('/garages', function (Group $group) {
+        $group->get('/search', ViewGarageAction::class);
+        $group->post('/results', ListGaragesAction::class);
     });
 };

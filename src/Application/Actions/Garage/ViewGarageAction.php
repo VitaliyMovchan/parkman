@@ -40,7 +40,7 @@ class ViewGarageAction extends Action
     protected function action(): Response
     {
         $this->response->getBody()->write(
-            $this->view->render('garages')
+            $this->view->render('garages.twig')
         );
 
         return $this->response;
