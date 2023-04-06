@@ -13,6 +13,7 @@ return function (ContainerBuilder $containerBuilder) {
     $containerBuilder->addDefinitions([
         SettingsInterface::class => function () {
             return new Settings([
+                'app_env'             => 'DEVELOPMENT',
                 'displayErrorDetails' => true, // Should be set to false in production
                 'logError'            => false,
                 'logErrorDetails'     => false,
@@ -22,11 +23,11 @@ return function (ContainerBuilder $containerBuilder) {
                     'level' => Logger::DEBUG,
                 ],
                 'db' => [
-                    'driver' => 'mysql',
-                    'host' => 'db',
-                    'database' => 'parkman',
-                    'username' => 'root',
-                    'password' => 'root',
+                    'driver'    => 'mysql',
+                    'host'      => 'db',
+                    'database'  => 'parkman',
+                    'username'  => 'root',
+                    'password'  => 'root',
                     'charset'   => 'utf8',
                     'collation' => 'utf8_unicode_ci',
                     'prefix'    => '',
